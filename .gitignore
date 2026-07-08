@@ -1,0 +1,39 @@
+# Local environment and secrets throughout the workspace
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/.oci/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Nested repository metadata is not part of the aggregate AMP repository
+**/.git/
+
+# Dependencies, caches, and build output
+.venv/
+**/.venv/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+**/dist/
+build/
+**/build/
+*.log
+
+# Editor and local runtime state
+.idea/
+.vscode/
+*.db
+*.sqlite
+*.sqlite3
+tmp/
+**/tmp/

@@ -1,0 +1,12 @@
+Title: SSO and MFA Troubleshooting
+Category: Access Management
+
+If an employee changes phones, they must re-register the authenticator before multi-factor authentication will work on the new device.
+
+To re-register MFA, open the identity self-service portal, choose Security Methods, remove the old authenticator device, and add the new device. The employee should complete the test prompt before closing the portal.
+
+If the employee cannot access the identity self-service portal, the helpdesk can create an access reset ticket. The ticket must include the employee email, manager name, affected application, and a callback number.
+
+For repeated MFA failures, check whether the user account is locked, whether the authenticator device time is synchronized, and whether the employee is using the correct username format.
+
+Application access requests should include the application name, business justification, manager approval, and required role or group name.

@@ -1,0 +1,12 @@
+Title: VPN Reset and Remote Access Guide
+Category: IT Support
+
+Employees can reset a VPN profile from the Secure Access portal. Open the portal, select Reset VPN Profile, remove the old device binding, and restart the VPN client before signing in again.
+
+If the VPN client asks for multi-factor authentication, approve the prompt from the registered authenticator app. If no prompt appears, verify that the device time is synchronized and that push notifications are enabled.
+
+If the VPN client reports a certificate mismatch, refresh the device certificate from endpoint management and wait five minutes before reconnecting.
+
+If VPN access still fails after these steps, create a helpdesk ticket with the employee email address, device name, VPN error message, and the time the issue occurred.
+
+Laptop replacement is not handled through the VPN reset process. For hardware issues, the employee should submit a separate hardware support request.

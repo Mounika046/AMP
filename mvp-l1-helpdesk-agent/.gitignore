@@ -1,0 +1,44 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Python
+backend/.venv/
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local runtime state
+helpdesk_mvp.db
+backend/helpdesk_mvp.db
+backend/*.db
+backend/tmp/
+backend/storage/
+tmp/
+*.sqlite
+*.sqlite3
+
+# Frontend
+frontend/.npmrc
+frontend/node_modules/
+frontend/dist/
+
+# Logs and OS/editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local convenience scripts
+scripts/start-backend.ps1
+scripts/start-frontend.ps1

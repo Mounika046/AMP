@@ -1,0 +1,12 @@
+Title: Day One Onboarding Checklist
+Category: Onboarding
+
+The day-one onboarding checklist includes laptop delivery, corporate email activation, badge request, payroll profile setup, benefits task review, and required training assignments.
+
+Before the employee start date, the hiring manager should confirm the start date, shipping address, role, department, and required applications.
+
+On the first day, the employee should sign in to corporate email, complete identity verification, enroll in multi-factor authentication, review the onboarding portal, and confirm access to required collaboration tools.
+
+If the laptop has not arrived, the manager should create an onboarding support ticket with the employee name, start date, shipping address, and asset request number.
+
+Required training should be completed within the first week unless a department-specific policy states a shorter deadline.

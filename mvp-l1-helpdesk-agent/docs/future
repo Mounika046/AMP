@@ -1,0 +1,105 @@
+| Current dummy tool | Later real Oracle integration |
+|---|---|
+| `get_leave_balance` | Oracle Fusion HCM Absence Management |
+| `get_employee_profile` | Oracle Fusion HCM employee profile APIs |
+| `get_payroll_summary` | Oracle Payroll / Fusion HCM Payroll |
+| `get_assigned_assets` | Oracle ITSM / Asset system / internal CMDB |
+| `get_access_summary` | Oracle Identity Governance / IAM / IDCS |
+| `create_ticket` | Oracle HR Help Desk, Oracle Service, or Zendesk |
+| `get_ticket_status` | Oracle HR Help Desk / Oracle Service / Zendesk |
+
+OCI model selects tool
+↓
+Backend executes tool wrapper
+↓
+Tool wrapper calls Oracle product API
+↓
+Oracle product returns real user-specific data
+↓
+OCI model writes final answer
+
+
+
+CURRENT ARCHITECTURE
+Agent Profiles on One Shared Runtime
+
+                 ┌─────────────────────┐
+                 │      User Chat       │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │  Single Chat Agent   │
+                 │  Shared Runtime      │
+                 └──────────┬──────────┘
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+          ▼                 ▼                 ▼
+ ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
+ │ IT Profile     │ │ HR Profile     │ │ Payroll Profile│
+ │ Prompt config  │ │ Prompt config  │ │ Prompt config  │
+ │ KB scope       │ │ KB scope       │ │ KB scope       │
+ └───────┬────────┘ └───────┬────────┘ └───────┬────────┘
+         │                  │                  │
+         └──────────────────┼──────────────────┘
+                            ▼
+              ┌─────────────────────────┐
+              │ Shared Tool / RAG Layer │
+              │ OCI Vector Store        │
+              │ Transaction tools       │
+              │ Zendesk ticketing       │
+              └───────────┬─────────────┘
+                          ▼
+              ┌─────────────────────────┐
+              │ Final Answer / Ticket   │
+              └─────────────────────────┘
+
+
+PROPOSED ARCHITECTURE
+Supervisor Agent + Specialist Sub-Agents
+
+                 ┌─────────────────────┐
+                 │      User Chat       │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+                 ┌─────────────────────┐
+                 │  Supervisor Agent    │
+                 │  - Route query       │
+                 │  - Choose agent      │
+                 │  - Handle fallback   │
+                 │  - Create ticket     │
+                 └──────────┬──────────┘
+                            │
+       ┌────────────────────┼────────────────────┐
+       │                    │                    │
+       ▼                    ▼                    ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ IT Support Agent│ │ HR Agent        │ │ Payroll Agent   │
+│ Own prompt      │ │ Own prompt      │ │ Own prompt      │
+│ IT + Access RAG │ │ HCM RAG         │ │ Payroll RAG     │
+│ Asset tools     │ │ Leave tools     │ │ Payroll tools   │
+│ Access tools    │ │ Employee tools  │ │ Pay tools       │
+└────────┬────────┘ └────────┬────────┘ └────────┬────────┘
+         │                   │                   │
+         ▼                   ▼                   ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ OCI Vector Store│ │ Oracle HCM /    │ │ Oracle Payroll /│
+│ IT docs         │ │ Mock HCM APIs   │ │ Mock Payroll API│
+│ Asset connector │ │ Leave connector │ │ Payroll connector│
+└────────┬────────┘ └────────┬────────┘ └────────┬────────┘
+         │                   │                   │
+         └───────────────────┼───────────────────┘
+                             ▼
+                ┌────────────────────────┐
+                │ Supervisor Final Layer │
+                │ - Return answer        │
+                │ - All-knowledge fallback│
+                │ - Ticket escalation    │
+                └───────────┬────────────┘
+                            ▼
+                ┌────────────────────────┐
+                │ Final Answer / Ticket  │
+                └────────────────────────┘
+

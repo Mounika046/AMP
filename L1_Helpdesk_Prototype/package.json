@@ -1,0 +1,11 @@
+{
+  "name": "l1-helpdesk-agent-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "High fidelity standalone L1 HelpDesk Agent prototype with mock frontend and backend.",
+  "scripts": {
+    "dev": "powershell -ExecutionPolicy Bypass -File scripts/start-dev.ps1",
+    "start:backend": "node backend/server.js",
+    "start:frontend": "node frontend/server.js"
+  }
+}

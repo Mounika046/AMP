@@ -1,0 +1,12 @@
+Title: Payroll Bank Details FAQ
+Category: Payroll
+
+Employees can update payroll bank details in Employee Self-Service under Payroll and Payment Methods. The update should be submitted before payroll lock to apply to the next pay cycle.
+
+Payroll lock usually occurs before payroll processing starts. Changes made after payroll lock may apply to the following pay cycle instead of the current one.
+
+To update payment details, open Employee Self-Service, go to Payroll, choose Payment Methods, edit the bank account, verify routing details, and save the change.
+
+For security reasons, payroll support cannot update bank details on behalf of an employee through chat. The employee must complete the update in Employee Self-Service.
+
+If the employee entered incorrect bank information, they should create a payroll ticket with the pay period, payment method, and a description of the issue. They should not include full bank account numbers in the ticket description.

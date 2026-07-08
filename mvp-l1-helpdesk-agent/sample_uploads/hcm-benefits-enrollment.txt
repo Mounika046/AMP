@@ -1,0 +1,12 @@
+Title: Benefits Enrollment Guide
+Category: HCM
+
+Employees can update benefits during open enrollment or after a qualifying life event. Qualifying life events include marriage, birth or adoption of a child, change in employment status, or loss of other coverage.
+
+Benefits updates are submitted through Employee Self-Service. The employee should open Benefits, select the active enrollment event, review available plans, attach any required documents, and submit the election.
+
+After submission, employees can review the status in Employee Self-Service. A pending status means the benefits team has not completed review. An approved status means the election has been accepted.
+
+If the enrollment event is missing, the employee should create an HR helpdesk ticket with the event type, event date, and any supporting documentation.
+
+The helpdesk should not promise plan eligibility or coverage amounts unless the information is present in an approved benefits document.
