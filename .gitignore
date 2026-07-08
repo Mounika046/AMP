@@ -37,3 +37,7 @@ build/
 *.sqlite3
 tmp/
 **/tmp/
+
+# Local planning and handoff documentation
+mvp-l1-helpdesk-agent/docs/meeting-notes-agent-architecture.md
+mvp-l1-helpdesk-agent/docs/project-context-handoff.md
